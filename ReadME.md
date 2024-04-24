@@ -1,6 +1,6 @@
 # PostgreSQL Database CLI Interface
 
-This Python program provides a Command Line Interface (CLI) for interacting with a PostgreSQL database. It supports various database operations such as insert, delete, update, search, and more.
+This Python program provides a Command Line Interface (CLI) for interacting with a PostgreSQL database. It supports various database operations such as insert, delete, update, search, and more. For a video on usage, please use this link: https://psu.mediaspace.kaltura.com/media/t/1_oovtp88b 
 
 ## Getting Started
 
