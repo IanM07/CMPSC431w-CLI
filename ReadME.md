@@ -158,7 +158,7 @@ CREATE TABLE Car_Usage (
 );
 
 
-After this you can either insert synthetic data to test the database, or upload a CSV file (one I have provided) that contains the proper information with proper headers for import. To test the CLI I used synthetic data similar to the inputs below. Once again run these using the Query tool:
+After this you can either insert synthetic data to test the database, or upload a CSV file (one I have provided) that contains the proper information with proper headers for import (such as https://www.kaggle.com/datasets/dylanmonfret/rlcs-202122/data?select=games_by_players.csv which this database schema is based on). To test the CLI I used synthetic data similar to the inputs below. Once again run these using the Query tool:
 
 -- Insert into Regions
 
