@@ -61,6 +61,7 @@ CREATE TABLE Regions (
  region_id VARCHAR(255) PRIMARY KEY
 );
 
+
 Teams Table
 
 CREATE TABLE Teams (
@@ -69,12 +70,14 @@ CREATE TABLE Teams (
  FOREIGN KEY (region_id) REFERENCES Regions(region_id)
 );
 
+
 Cars Table
 
 CREATE TABLE Cars (
  car_id SERIAL PRIMARY KEY,
  car_name VARCHAR(255) NOT NULL
 );
+
 
 Players Table
 
@@ -90,6 +93,7 @@ CREATE TABLE Players (
  FOREIGN KEY (car_id) REFERENCES Cars(car_id)
 );
 
+
 Rankings Table
 
 CREATE TABLE Rankings (
@@ -97,6 +101,7 @@ CREATE TABLE Rankings (
  player_id VARCHAR(255) UNIQUE NOT NULL,
  FOREIGN KEY (player_id) REFERENCES Players(player_id)
 );
+
 
 Camera Settings Table
 
@@ -113,11 +118,13 @@ CREATE TABLE Camera_Settings (
  FOREIGN KEY (player_id) REFERENCES Players(player_id)
 );
 
+
 Games Table
 
 CREATE TABLE Games (
  game_id VARCHAR(255) PRIMARY KEY
 );
+
 
 Performance Metrics Table
 
@@ -137,6 +144,7 @@ CREATE TABLE Performance_Metrics (
  FOREIGN KEY (player_id) REFERENCES Players(player_id)
 );
 
+
 Car Usage Table
 
 CREATE TABLE Car_Usage (
@@ -148,6 +156,7 @@ CREATE TABLE Car_Usage (
  FOREIGN KEY (player_id) REFERENCES Players(player_id),
  FOREIGN KEY (car_id) REFERENCES Cars(car_id)
 );
+
 
 After this you can either insert synthetic data to test the database, or upload a CSV file (one I have provided) that contains the proper information with proper headers for import. To test the CLI I used synthetic data similar to the inputs below. Once again run these using the Query tool:
 
