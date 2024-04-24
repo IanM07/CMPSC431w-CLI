@@ -56,11 +56,13 @@ The program automatically closes the database connection and cursor when you cho
 The database for this project can be created by first creating a blank database running the following commands in pgAdmin using the Query Tool:
 ##### DDL Commands
 Regions Table
+
 CREATE TABLE Regions (
  region_id VARCHAR(255) PRIMARY KEY
 );
 
 Teams Table
+
 CREATE TABLE Teams (
  team_id VARCHAR(255) PRIMARY KEY,
  region_id VARCHAR(255) NOT NULL,
@@ -68,12 +70,14 @@ CREATE TABLE Teams (
 );
 
 Cars Table
+
 CREATE TABLE Cars (
  car_id SERIAL PRIMARY KEY,
  car_name VARCHAR(255) NOT NULL
 );
 
 Players Table
+
 CREATE TABLE Players (
  player_id VARCHAR(255) PRIMARY KEY,
  player_tag VARCHAR(255) NOT NULL,
@@ -87,6 +91,7 @@ CREATE TABLE Players (
 );
 
 Rankings Table
+
 CREATE TABLE Rankings (
  ranking_id FLOAT PRIMARY KEY,
  player_id VARCHAR(255) UNIQUE NOT NULL,
@@ -94,6 +99,7 @@ CREATE TABLE Rankings (
 );
 
 Camera Settings Table
+
 CREATE TABLE Camera_Settings (
  camera_settings_id VARCHAR(255) PRIMARY KEY,
  player_id VARCHAR(255) UNIQUE NOT NULL,
@@ -108,11 +114,13 @@ CREATE TABLE Camera_Settings (
 );
 
 Games Table
+
 CREATE TABLE Games (
  game_id VARCHAR(255) PRIMARY KEY
 );
 
 Performance Metrics Table
+
 CREATE TABLE Performance_Metrics (
  game_id VARCHAR(255) NOT NULL,
  player_id VARCHAR(255) NOT NULL,
@@ -130,6 +138,7 @@ CREATE TABLE Performance_Metrics (
 );
 
 Car Usage Table
+
 CREATE TABLE Car_Usage (
  game_id VARCHAR(255) NOT NULL,
  player_id VARCHAR(255) NOT NULL,
@@ -143,27 +152,35 @@ CREATE TABLE Car_Usage (
 After this you can either insert synthetic data to test the database, or upload a CSV file (one I have provided) that contains the proper information with proper headers for import. To test the CLI I used synthetic data similar to the inputs below. Once again run these using the Query tool:
 
 -- Insert into Regions
+
 INSERT INTO Regions VALUES ('NorthAmerica');
 
 -- Insert into Teams
+
 INSERT INTO Teams VALUES ('TeamAlpha', 'NorthAmerica');
 
 -- Insert into Cars
+
 INSERT INTO Cars (car_name) VALUES ('Octane');
 
 -- Insert into Players
+
 INSERT INTO Players VALUES ('Player1', 'AlphaTag', 'TeamAlpha', 'NorthAmerica', 1, 100.0);
 
 -- Insert into Rankings
+
 INSERT INTO Rankings VALUES (100.0, 'Player1');
 
 -- Insert into Camera Settings
+
 INSERT INTO Camera_Settings VALUES ('CS1', 'Player1', 110, 100, 10, 270, 0.9, 4.5, 1.2);
 
 -- Insert into Games
+
 INSERT INTO Games VALUES ('Game1');
 
 -- Insert into Performance Metrics
+
 INSERT INTO Performance_Metrics VALUES ('Game1', 'Player1', 5, 2, 1, 3, 800, 2, 1, 97.5);
 
 -- Insert into Car Usage
